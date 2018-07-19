@@ -1,0 +1,92 @@
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 0[0m
+  [1m[35m (0.6ms)[0m  [1m[34mselect table_name from information_schema.views where table_schema = 'cross-solar-test'[0m
+  [1m[35m (118.6ms)[0m  [1m[35mTRUNCATE TABLE `ar_internal_metadata`;[0m
+  [1m[35m (8.7ms)[0m  [1m[35mTRUNCATE TABLE `one_hour_electricities`;[0m
+  [1m[35m (8.9ms)[0m  [1m[35mTRUNCATE TABLE `panels`;[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOneHourElectricity Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM `one_hour_electricities` WHERE `one_hour_electricities`.`hour` IS NULL AND `one_hour_electricities`.`panel_id` IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOneHourElectricity Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `one_hour_electricities` WHERE `one_hour_electricities`.`hour` IS NULL AND `one_hour_electricities`.`panel_id` IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOneHourElectricity Load (0.2ms)[0m  [1m[34mSELECT  `one_hour_electricities`.* FROM `one_hour_electricities` ORDER BY `one_hour_electricities`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `one_hour_electricities` (`created_at`, `updated_at`) VALUES ('2018-07-17 04:31:40', '2018-07-17 04:31:40')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mOneHourElectricity Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `one_hour_electricities` WHERE `one_hour_electricities`.`hour` IS NULL AND `one_hour_electricities`.`panel_id` IS NULL LIMIT 1[0m
+  [1m[36mOneHourElectricity Load (0.2ms)[0m  [1m[34mSELECT `one_hour_electricities`.* FROM `one_hour_electricities`[0m
+  [1m[36mOneHourElectricity Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `one_hour_electricities` WHERE `one_hour_electricities`.`hour` IS NULL AND `one_hour_electricities`.`panel_id` = 1 LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPanel Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM `panels` WHERE `panels`.`serial` IS NULL LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPanel Load (0.2ms)[0m  [1m[34mSELECT  `panels`.* FROM `panels` ORDER BY `panels`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `panels` (`serial`, `created_at`, `updated_at`) VALUES ('a', '2018-07-17 04:31:40', '2018-07-17 04:31:40')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPanel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `panels` WHERE `panels`.`serial` = BINARY 'a' LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPanel Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `panels` WHERE `panels`.`serial` = BINARY 'xxxxxxxxxxxxxx' LIMIT 1[0m
+  [1m[36mPanel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `panels` WHERE `panels`.`serial` = BINARY 'xxxxxxxxxxxxxxx' LIMIT 1[0m
+  [1m[36mPanel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `panels` WHERE `panels`.`serial` = BINARY 'xxxxxxxxxxxxxxxx' LIMIT 1[0m
+  [1m[36mPanel Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `panels` WHERE `panels`.`serial` = BINARY 'xxxxxxxxxxxxxxx' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPanel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `panels` WHERE `panels`.`serial` IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPanel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `panels` WHERE `panels`.`serial` IS NULL LIMIT 1[0m
+  [1m[36mPanel Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `panels` WHERE `panels`.`serial` IS NULL LIMIT 1[0m
+  [1m[36mPanel Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `panels` WHERE `panels`.`serial` IS NULL LIMIT 1[0m
+  [1m[36mPanel Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `panels` WHERE `panels`.`serial` IS NULL LIMIT 1[0m
+  [1m[36mPanel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `panels` WHERE `panels`.`serial` IS NULL LIMIT 1[0m
+  [1m[36mPanel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `panels` WHERE `panels`.`serial` IS NULL LIMIT 1[0m
+  [1m[36mPanel Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `panels` WHERE `panels`.`serial` IS NULL LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPanel Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `panels` WHERE `panels`.`serial` IS NULL LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Started POST "/panels" for 127.0.0.1 at 2018-07-17 10:01:40 +0530
+Processing by PanelsController#create as JSON
+  Parameters: {"panel"=>{"serial"=>"", "latitude"=>"", "longitude"=>"", "brand"=>""}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPanel Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `panels` WHERE `panels`.`serial` = BINARY '' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 422 Unprocessable Entity in 4ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
